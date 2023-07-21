@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zebra.Vistas.Productos"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:vistamodelo="clr-namespace:Zebra.VistaModelo" x:DataType="vistamodelo:VMproductos"
+             xmlns:globales="clr-namespace:Zebra.Vistas.Globales">
+    <Grid>
+        <Grid IsVisible="{Binding Conectado}"
+                     VerticalOptions="FillAndExpand">
+            <Grid RowDefinitions="0.35*,2*,*">
+                <StackLayout BackgroundColor="Bisque"
+                         Orientation="Horizontal">
+                    <Image Source="angleleft.png"
+                       HeightRequest="30"
+                       VerticalOptions="EndAndExpand"
+                       HorizontalOptions="Start"
+                       Margin="10,0,0,10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding VolverProdCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label HorizontalOptions="CenterAndExpand"
+                    Text="Productos"
+                       VerticalOptions="End"
+                       FontSize="35"
+                       FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout BackgroundColor="AntiqueWhite"
+                                 Grid.Row="1">
+                    <Label VerticalOptions="Start"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="General"/>
+                    <ScrollView VerticalOptions="FillAndExpand">
+                        <Grid BackgroundColor="Transparent"
+                              VerticalOptions="FillAndExpand"
+                              RowDefinitions="*, *, *, *, *">
+                            <ScrollView Orientation="Horizontal">
+                                <StackLayout BackgroundColor="Transparent"
+                                         Orientation="Horizontal"
+                                             x:Name="Mancuernas">
+                                </StackLayout>
+                            </ScrollView>
+                            <ScrollView Grid.Row="1"
+                                        Orientation="Horizontal">
+                                <StackLayout BackgroundColor="Transparent"
+                                         Orientation="Horizontal"
+                                             x:Name="Pesas">
+                                </StackLayout>
+                            </ScrollView>
+                            <ScrollView Grid.Row="2"
+                                        Orientation="Horizontal">
+                                <StackLayout BackgroundColor="Transparent"
+                                         Orientation="Horizontal"
+                                             x:Name="Barras">
+                                </StackLayout>
+                            </ScrollView>
+                            <ScrollView Grid.Row="3"
+                                        Orientation="Horizontal">
+                                <StackLayout BackgroundColor="Transparent"
+                                         Orientation="Horizontal"
+                                             x:Name="Maquinas">
+                                </StackLayout>
+                            </ScrollView>
+                            <ScrollView Grid.Row="4"
+                                        Orientation="Horizontal">
+                                <StackLayout BackgroundColor="Transparent"
+                                         Orientation="Horizontal"
+                                             x:Name="Otros">
+                                </StackLayout>
+                            </ScrollView>
+                        </Grid>
+                    </ScrollView>
+                </StackLayout>
+                <StackLayout BackgroundColor="LemonChiffon"
+                                 Grid.Row="2">
+                    <Label VerticalOptions="Start"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Destacados"/>
+                    <ScrollView Orientation="Horizontal"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal">
+                        <Image HeightRequest="90"
+                               WidthRequest="90"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               Source="megusta.png"/>
+                        <Image HeightRequest="90"
+                               WidthRequest="90"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               Source="megusta.png"/>
+                        <Image HeightRequest="90"
+                               WidthRequest="90"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               Source="megusta.png"/>
+                        <Image HeightRequest="90"
+                               WidthRequest="90"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               Source="megusta.png"/>
+                        <Image HeightRequest="90"
+                               WidthRequest="90"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               Source="megusta.png"/>
+                        <Image HeightRequest="90"
+                               WidthRequest="90"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               Source="megusta.png"/>
+                        <Image HeightRequest="90"
+                               WidthRequest="90"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               Source="megusta.png"/>
+                        <Image HeightRequest="90"
+                               WidthRequest="90"
+                               VerticalOptions="Start"
+                               Margin="15"
+                               Source="megusta.png"/>
+                    </StackLayout>
+                    </ScrollView>
+                    
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+        <Grid IsVisible="{Binding SinConexion}"
+              RowDefinitions="0.3*, *">
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#00FFFF" Offset="0.1"/>
+                    <GradientStop Color="#01DF01" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image Source="angleleft.png"
+                       HeightRequest="30"
+                       VerticalOptions="StartAndExpand"
+                       HorizontalOptions="Start"
+                       Margin="10,30,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding VolverProdCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <StackLayout Grid.Row="1"
+                         VerticalOptions="CenterAndExpand">
+                <globales:ValidarInternet/>
+            </StackLayout>
+            
+        </Grid>
+    </Grid>
+</ContentPage>

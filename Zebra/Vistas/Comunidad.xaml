@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Zebra.Vistas.Comunidad"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:globales="clr-namespace:Zebra.Vistas.Globales"
+             xmlns:vistamodelo="clr-namespace:Zebra.VistaModelo" x:DataType="vistamodelo:VMcomunidad">
+    <Grid>
+        <Grid IsVisible="{Binding Conectado}"
+              VerticalOptions="FillAndExpand">
+            <Grid RowDefinitions="0.27*, 2.3*">
+                <StackLayout BackgroundColor="Bisque"
+                             Orientation="Horizontal">
+                    <Image Source="angleleft.png"
+                       HeightRequest="30"
+                       VerticalOptions="EndAndExpand"
+                       HorizontalOptions="Start"
+                       Margin="10,0,0,10">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding VolverComCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Label VerticalOptions="End"
+                           HorizontalOptions="CenterAndExpand"
+                           Text="Comunidad"
+                           FontSize="35"
+                           FontAttributes="Bold"/>
+                </StackLayout>
+                <Grid Grid.Row="1">
+                    <Label HorizontalOptions="Center"
+                           VerticalOptions="Start"
+                           Text="Hola"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid IsVisible="{Binding SinConexion}"
+              RowDefinitions="0.3*, *">
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#00FFFF" Offset="0.1"/>
+                    <GradientStop Color="#01DF01" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Image  Source="angleleft.png"
+                       HeightRequest="30"
+                       VerticalOptions="StartAndExpand"
+                       HorizontalOptions="Start"
+                       Margin="10,30,0,0">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding VolverComCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <StackLayout Grid.Row="1"
+                VerticalOptions="Center">
+                <globales:ValidarInternet/>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

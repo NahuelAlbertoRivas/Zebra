@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:views="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Zebra.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
+             xmlns:vistamodelo="clr-namespace:Zebra.VistaModelo" x:DataType="vistamodelo:VMmainPage"
+             xmlns:globales="clr-namespace:Zebra.Vistas.Globales">
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="#00FFFF" Offset="0.1"/>
+                <GradientStop Color="#01DF01" Offset="1.0"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackLayout VerticalOptions="CenterAndExpand"
+                     Spacing="40">
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavATrackCommand}"/>
+                </Grid.GestureRecognizers>
+                <pancake:PancakeView BackgroundColor="Aqua"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 CornerRadius="30"
+                                 HeightRequest="50"
+                                 WidthRequest="300">
+                    <StackLayout HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Padding="10">
+                        <Label Text="Track de macros"
+                           HeightRequest="25"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="20"
+                           FontAttributes="Bold">
+
+                        </Label>
+                    </StackLayout>
+                </pancake:PancakeView>
+            </Grid>
+            <Grid>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavATimCommand}"/>
+                </Grid.GestureRecognizers>
+                <pancake:PancakeView BackgroundColor="Aqua"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 CornerRadius="30"
+                                 HeightRequest="50"
+                                 WidthRequest="300">
+                    <StackLayout HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Padding="10">
+                        <Label Text="Timer"
+                           HeightRequest="25"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="20"
+                           FontAttributes="Bold">
+
+                        </Label>
+                    </StackLayout>
+                </pancake:PancakeView>
+            </Grid>
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavAProdCommand}"/>
+                </Grid.GestureRecognizers>
+                <pancake:PancakeView BackgroundColor="Aqua"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 CornerRadius="30"
+                                 HeightRequest="50"
+                                 WidthRequest="300">
+                    <StackLayout HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Padding="10">
+                        <Label Text="Productos"
+                           HeightRequest="25"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="20"
+                           FontAttributes="Bold">
+
+                        </Label>
+                    </StackLayout>
+                </pancake:PancakeView>
+            </Grid>
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavAComCommand}"/>
+                </Grid.GestureRecognizers>
+                <pancake:PancakeView BackgroundColor="Aqua"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 CornerRadius="30"
+                                 HeightRequest="50"
+                                 WidthRequest="300">
+                    <StackLayout HorizontalOptions="Center"
+                             VerticalOptions="Center"
+                             Padding="10">
+                        <Label Text="Comunidad"
+                           HeightRequest="25"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="20"
+                           FontAttributes="Bold">
+
+                        </Label>
+                    </StackLayout>
+                </pancake:PancakeView>
+            </Grid>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

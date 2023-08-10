@@ -40,7 +40,7 @@
                     </StackLayout>
                 </pancake:PancakeView>
             </Grid>
-            <Grid>
+            <!--<Grid>
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavATimCommand}"/>
                 </Grid.GestureRecognizers>
@@ -63,7 +63,7 @@
                         </Label>
                     </StackLayout>
                 </pancake:PancakeView>
-            </Grid>
+            </Grid>-->                          <!-- Esta sección 'Timer' será desarrollada a futuro en detalle -->
             <Grid VerticalOptions="CenterAndExpand">
                 <Grid.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavAProdCommand}"/>
